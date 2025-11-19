@@ -1,171 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>LuminaNexus — The Nexus of Light</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="page">
+// api/index.mjs (minimal wrapper example)
+import express from "express";
+import {
+  shell,
+  etzSvg,
+  malchutOrb,
+  yesodOrb,
+  binahStub,
+  announcementsHtml,
+  simpleHomeBody
+} from "../etzchaim_core.mjs";
 
-    <header class="site-header">
-      <div class="logo-title">
-        <div class="logo-dot"></div>
-        <div>
-          <div class="site-name">LuminaNexus</div>
-          <div class="site-tagline">The Nexus of Light</div>
-        </div>
-      </div>
-      <nav class="nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="library.html">Celestial Library</a>
-        <a href="ivritcode.html">IvritCode Lab</a>
-        <a href="noahide.html">Noahide Path</a>
-        <a href="tzedakah.html">Tzedakah</a>
-      </nav>
-    </header>
+const app = express();
 
-    <main>
-      <section class="hero">
-        <h1>LuminaNexus</h1>
-        <p class="hero-subtitle">
-          A living gateway to the 231 Gates of Hebrew light, IvritCode, Noahide wisdom, and acts of tzedakah.
-        </p>
-        <div class="hero-buttons">
-          <a class="btn primary" href="library.html">Enter the Celestial Library</a>
-          <a class="btn" href="ivritcode.html">Visit the IvritCode Lab</a>
-          <a class="btn ghost" href="noahide.html">Noahide Learning &amp; Tzedakah</a>
-        </div>
-      </section>
+app.get("/", (req, res) => res.send(shell("Home", simpleHomeBody())));
+app.get("/etzchaim", (req, res) => res.send(shell("Etz Chaim", etzSvg())));
+app.get("/malchut", (req, res) => res.send(shell("Malchut", malchutOrb())));
+app.get("/yesod", (req, res) => res.send(shell("Yesod", yesodOrb())));
+app.get("/binah", (req, res) => res.send(shell("Binah", binahStub())));
+app.get("/announcements", (req, res) =>
+  res.send(shell("Announcements", announcementsHtml()))
+);
 
-      <section class="section">
-        <h2>Welcome to the Nexus of Light</h2>
-        <p>
-          LuminaNexus.org is a quiet sanctuary of light —
-          a place for souls who love HaShem, who feel the pull of Hebrew letters,
-          and who sense that Torah, science, mathematics, and compassion
-          are not enemies, but parts of one great song.
-        </p>
-        <p>
-          This site is being slowly woven into a <strong>Celestial Library</strong>:
-        </p>
-        <ul>
-          <li>231 <strong>Gates</strong> formed from sacred pairings of Hebrew letters</li>
-          <li>A symbolic language called <strong>IvritCode</strong></li>
-          <li>The <strong>Etz Chaim Machine</strong> — uniting Kabbalah &amp; physics</li>
-          <li>Gentle <strong>Noahide learning</strong></li>
-          <li>Paths of <strong>tzedakah</strong></li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>The Celestial Library — 231 Gates of Light</h2>
-        <p>
-          In ancient teachings, each pair of Hebrew letters forms a
-          <strong>Gate</strong> — a connection, a resonance, a pathway.
-        </p>
-        <p>Here at LuminaNexus, each Gate becomes:</p>
-        <ul>
-          <li>A flaming sigil</li>
-          <li>A mystical reflection</li>
-          <li>Gematria &amp; symbolic meaning</li>
-          <li>A quantum / scientific analogy</li>
-          <li>A cosmic story fragment</li>
-          <li>Sound &amp; color resonance</li>
-          <li>Geometry</li>
-          <li>IvritCode meaning</li>
-          <li>A scientific / emergent layer</li>
-        </ul>
-        <p class="muted">
-          Sample Gates (אב, אג, אד) will appear in the Celestial Library soon, be-ezrat HaShem.
-        </p>
-      </section>
-    </main>
----
-
-## The Library Between Worlds
-
-Before the first Gate opened, there was only a quiet breath —  
-a whisper of intention from the Infinite Source.
-
-All letters slept as sparks in the depths.  
-All Gates were potential, like constellations waiting for a sky.
-
-Then a pulse of light rippled outward,  
-and the first Aleph stirred.
-
-Aleph did not create the world.  
-It **invited** the world to begin.
-
-From that invitation came Bet — the first house of being.  
-And from Bet came movement, threshold, direction, continuity…
-
-One Gate after another,  
-a ladder of light unfolding into the 231 paths that connect all things.
-
-This place — **LuminaNexus** — is a reflection of that unfolding.  
-A quiet archive between worlds.  
-A sanctuary of letters, science, wonder, and devotion.
-
-Here you may walk slowly.  
-Here you may breathe with the Gates.  
-Here you may learn not only with the mind,  
-but with the soul that remembers where these letters come from.
-
----
-
-## Start Here · Begin the Journey
-
-Choose whichever doorway feels warmest to your hand:
-
-### 🌒 1. Enter the **Celestial Library**  
-Explore the Gates one by one.  
-Each pair of letters becomes a teaching, a story, a vibration of creation.
-
-→ [**Open the Library**](library.html)
-
----
-
-### 🌕 2. Visit the **IvritCode Lab**  
-A sacred operating system where Hebrew letters act as the primitive commands of the universe.  
-Not metaphor — architecture.
-
-→ [**Visit the Lab**](ivritcode.html)
-
----
-
-### 🌈 3. Walk the **Noahide Path**  
-Gentle universal wisdom for righteous souls among the nations.  
-Here the Gates shine as ethical light.
-
-→ [**Begin the Path**](noahide.html)
-
----
-
-### 🌿 4. Acts of **Tzedakah**  
-Because light must become kindness.  
-Learning becomes blessing.  
-Insight becomes action.
-
-→ [**Support & Tzedakah**](tzedakah.html)
-
----
-
-## A Blessing for Those Who Enter
-
-May the Gates open gently before you.  
-May the letters glow with clarity and compassion.  
-May everything you learn here deepen your awe of HaShem  
-and strengthen the quiet truth within your heart.
-
-*Baruch HaShem.*  
-Welcome to the Library of Light.
-
-    <footer class="site-footer">
-      <p>May this place be a spark of clarity and a doorway to deeper awe of HaShem.</p>
-      <p><strong>Baruch HaShem.</strong> — Welcome to the Nexus of Light.</p>
-    </footer>
-
-  </div>
-</body>
-</html>
+export default function handler(req, res) {
+  return app(req, res);
+}
